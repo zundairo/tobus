@@ -1,0 +1,58 @@
+{
+  "name": "tobus",
+  "version": "1.0.0",
+  "description": "Node.jsで都バスの接近情報のページを解析します",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "jest --watch --coverage --silent=false --verbose=false",
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "ts-node-dev --respawn src/index.ts",
+    "clean": "rimraf dist/*",
+    "tsc": "tsc",
+    "build": "npm-run-all clean tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zundairo/tobus.git"
+  },
+  "author": "@zundairo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zundairo/tobus/issues"
+  },
+  "homepage": "https://github.com/zundairo/tobus#readme",
+  "dependencies": {
+    "cheerio-httpcli": "^0.7.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.42",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/*.spec.+(ts|tsx|js)"
+    ]
+  }
+}
